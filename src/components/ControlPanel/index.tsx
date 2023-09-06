@@ -40,7 +40,7 @@ export const ControlPanel = () => {
             </CollapsibleTrigger>
 
             <CollapsibleContent className="space-y-2">
-              <div className="flex sm:flex-col p-2 gap-1 bg-zinc-950/25 rounded">
+              <div className="flex sm:flex-col p-2 gap-1 bg-zinc-950/50 rounded">
                 {Object.values(ZenLightEnum).map((color) => (
                   <button key={color} onClick={() => setLight(color)} aria-label={color}>
                     <div className={cn('w-10 h-10 rounded-full', color)} />
