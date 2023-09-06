@@ -10,6 +10,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
@@ -31,6 +32,12 @@
   },
   "devDependencies": {
     "eslint": "^8.48.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "^13.4.6",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3"
