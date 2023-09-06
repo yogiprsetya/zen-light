@@ -5,13 +5,17 @@ import { useState } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Button } from '@/components/ui/button';
 import { useOutsideEvent } from 'hooks/useOutsideEvent';
+import { useStore } from 'state/store';
 
-type Props = {
-  light: ZenLightEnum;
-  setLight: (x: ZenLightEnum) => void;
+const useLight = () => {
+  return useStore((store) => ({
+    light: store.light,
+    setLight: store.setLight
+  }));
 };
 
-export const ControlPanel = (props: Props) => {
+export const ControlPanel = () => {
+  const { light, setLight } = useLight();
   const [openColorPanel, setOpenColorPanel] = useState<boolean>(false);
   const wrap = useOutsideEvent(() => setOpenColorPanel(false));
 
@@ -25,7 +29,7 @@ export const ControlPanel = (props: Props) => {
                 <div
                   className={cn(
                     'w-10 h-10 sm:h-8 sm:w-8 rounded-full flex items-center justify-center text-black',
-                    props.light
+                    light
                   )}
                 >
                   {openColorPanel ? <ArrowLeftCircle /> : <Palette />}
@@ -38,7 +42,7 @@ export const ControlPanel = (props: Props) => {
             <CollapsibleContent className="space-y-2">
               <div className="flex sm:flex-col p-2 gap-1 bg-zinc-950/25 rounded">
                 {Object.values(ZenLightEnum).map((color) => (
-                  <button key={color} onClick={() => props.setLight(color)} aria-label={color}>
+                  <button key={color} onClick={() => setLight(color)} aria-label={color}>
                     <div className={cn('w-10 h-10 rounded-full', color)} />
                   </button>
                 ))}
