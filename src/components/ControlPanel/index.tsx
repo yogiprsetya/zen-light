@@ -1,5 +1,5 @@
 import { ZenLightEnum } from '@/types/color';
-import { cn } from 'lib/utils';
+import { cn } from '@/lib/utils';
 import { ArrowLeftCircle, Palette } from 'lucide-react';
 import { useState } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';

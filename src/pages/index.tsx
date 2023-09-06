@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
-import { cn } from 'lib/utils';
-import { clientSideRender } from 'lib/clientSideRender';
+import { cn } from '@/lib/utils';
+import { clientSideRender } from 'utils/clientSideRender';
 import { ZenLightEnum } from '@/types/color';
 import { useState } from 'react';
 import { ControlPanel } from 'components/ControlPanel';
